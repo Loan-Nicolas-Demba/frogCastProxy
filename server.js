@@ -23,7 +23,7 @@ app.get("/forecast", async (req, res) => {
     const response = await fetch(apiUrl, {
       headers: {
         Authorization: `Bearer ${widgetToken}`,
-        "X-SteadyWeb-Secret": ``
+        "X-SteadyWeb-Secret": `86dff2ade059a0067f60b6a014549123`
       }
     });
     console.log(apiUrl);
