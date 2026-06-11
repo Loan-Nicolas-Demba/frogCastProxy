@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 
 
-const apiKey = process.env.FROGCAST_API_KEY;
+const secret = process.env.X-SteadyWeb-Secret;
 app.get("/forecast", async (req, res) => {
   try {
     const { latitude, longitude, fields, widgetToken} = req.query;
@@ -23,7 +23,7 @@ app.get("/forecast", async (req, res) => {
     const response = await fetch(apiUrl, {
       headers: {
         Authorization: `Bearer ${widgetToken}`,
-        "X-SteadyWeb-Secret": `86dff2ade059a0067f60b6a014549123`
+        "X-SteadyWeb-Secret": `${secret}`
       }
     });
     console.log(apiUrl);
