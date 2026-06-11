@@ -10,7 +10,7 @@ app.use(cors());
 
 const apiKey = process.env.FROGCAST_API_KEY;
 app.get("/forecast", async (req, res) => {
-  try {getField
+  try {
     const { latitude, longitude, fields, widgetToken} = req.query;
 
     const apiUrl =
@@ -21,7 +21,8 @@ app.get("/forecast", async (req, res) => {
 
     const response = await fetch(apiUrl, {
       headers: {
-        Authorization: `Token ${process.env.FROGCAST_API_KEY}`
+        Authorization: `Token ${process.env.FROGCAST_API_KEY}`,
+        "X-SteadyWeb-Secret": ``
       }
     });
     console.log(apiUrl);
