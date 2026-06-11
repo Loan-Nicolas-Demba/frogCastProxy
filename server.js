@@ -10,8 +10,8 @@ app.use(cors());
 
 const apiKey = process.env.FROGCAST_API_KEY;
 app.get("/forecast", async (req, res) => {
-  try {
-    const { latitude, longitude, fields } = req.query;
+  try {getField
+    const { latitude, longitude, fields, widgetToken} = req.query;
 
     const apiUrl =
       `https://api.frogcast.com/api/v1/forecast/?latitude=${encodeURIComponent(latitude)}` +
@@ -25,6 +25,7 @@ app.get("/forecast", async (req, res) => {
       }
     });
     console.log(apiUrl);
+    console.log(widgetToken);
     const text = await response.text();
 
     if (!response.ok) {
