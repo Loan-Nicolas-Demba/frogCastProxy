@@ -22,7 +22,7 @@ app.get("/forecast", async (req, res) => {
 
     const response = await fetch(apiUrl, {
       headers: {
-        Authorization: `Token ${process.env.FROGCAST_API_KEY}`,
+        Authorization: `Bearer ${widgetToken}`,
         "X-SteadyWeb-Secret": ``
       }
     });
