@@ -16,7 +16,8 @@ app.get("/forecast", async (req, res) => {
     const apiUrl =
       `https://api.frogcast.com/api/v1/forecast/?latitude=${encodeURIComponent(latitude)}` +
       `&longitude=${encodeURIComponent(longitude)}` +
-      `&fields=${encodeURIComponent(fields)}`;
+      `&fields=${encodeURIComponent(fields)}`+
+      `&time_step=${60}&horizon${7200}`;
 
     const response = await fetch(apiUrl, {
       headers: {
